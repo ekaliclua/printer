@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EKALI - WEB</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <div v-if="show" class="printerInterface">
+            <p class="printerInterface__title">Printer N°{{ printerId }}</p>
+            <p class="printerInterface__money">{{ formatMoney(money) }}</p>
+            <div class="printerInterface__info">
+                <p class="printerInterface__info__item">
+                    {{  Math.round(paper) }} feuilles
+                </p>
+
+                <p class="printerInterface__info__item">
+                    {{ Math.round(ink) }} ml d'encre
+                </p>
+            </div>
+
+
+            <div class="printerInterface__batteryBar">
+                <div class="printerInterface__batteryBar__fill" :style="{ width: battery + '%', background: batteryFillColor() }"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

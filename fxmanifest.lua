@@ -10,3 +10,11 @@ server_scripts {
 client_scripts {
     'client/*.lua'
 }
+
+files ({
+    "web/index.html",
+    "web/script.js",
+    "web/style.css",
+})
+
+ui_page 'index.html'
